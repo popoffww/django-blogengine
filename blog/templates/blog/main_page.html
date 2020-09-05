@@ -1,0 +1,29 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+   Главная - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="main-page">
+      <span class="d-block p-2 text-white" style="background-color: #778899;">
+        <h1 class="text-center">Главная страница</h1>
+      </span>
+      <div class="container">
+        <div class="row offset-4 mt-5">
+          <a href="{% url 'posts_list_url' %}" type="submit" class="btn text-white"
+             style="background-color: #778899;">
+            Смотреть блог
+          </a>
+        </div>
+        <div class="row offset-4 mt-3 pl-4">
+          <a href="{% url 'tags_list_url' %}" type="submit" class="btn text-white"
+             style="background-color: #778899;">
+            Все тэги
+          </a>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

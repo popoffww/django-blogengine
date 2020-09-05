@@ -1,0 +1,14 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+Посты - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1 class="mb-3 text-center">Посты</h1>
+{% for post in page_object.object_list %}
+
+{% include 'blog/includes/template_card_btsr.html'%}
+
+{% endfor %}
+{% endblock %}

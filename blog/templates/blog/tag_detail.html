@@ -1,0 +1,19 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+{{ tag.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">
+  <!-- Посты с "{{ tag.title|title }}" тэгом: -->
+  Посты с "{{ tag.title }}" тэгом:
+</h1>
+
+{% for post in tag.posts.all %}
+
+{% include 'blog/includes/template_card_btsr.html'%}
+
+{% endfor %}
+
+{% endblock %}

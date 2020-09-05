@@ -1,0 +1,31 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+Создать пост - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h2 class="text-center">Создать пост</h2>
+
+<form class="" action="{% url 'post_create_url' %}" method="post">
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="form-group">
+    {% if field.errors %}
+    <div class="alert alert-danger">
+      {{ field.errors }}
+    </div>
+    {% endif%}
+    {{ field.label}}
+    {{ field }}
+  </div>
+  {% endfor %}
+  <div class="row offset-4 mt-5">
+    <div class="mr-2">
+      <a href="{% url 'posts_list_url' %}" class="btn btn-warning" type="submit">Назад</a>
+    </div>
+    <button class="btn btn-primary" type="submit">Создать пост</button>
+    </div>
+
+</form>
+{% endblock %}

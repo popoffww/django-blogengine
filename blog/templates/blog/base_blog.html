@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block admin-panel %}
+
+<a href="{{ post.get_update_url }}"
+class="btn text-white create" style="{% if detail %} display: block {% endif %}; background-color: #FF8C00">
+Обновить пост
+</a>
+
+<a href="{{ post.get_delete_url }}"
+class="btn btn-danger delete" style="{% if detail %} display: block {% endif %}">
+Удалить пост
+</a>
+
+<a href="{{ tag.get_update_url }}"
+class="btn btn-info edit" style="{% if detail %} display: block {% endif %}">
+Обновить тэг
+</a>
+
+<a href="{{ tag.get_delete_url }}"
+class="btn btn-danger edit" style="{% if detail %} display: block {% endif %}; background-color: #8B0000">
+Удалить тэг
+</a>
+
+<div class="dropdown">
+  <a class="btn btn-success dropdown-toggle"
+     href="#"
+     role="button"
+     id="dropdownMenuLink"
+     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Создать
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="{% url 'post_create_url' %}">Создать пост</a>
+    <a class="dropdown-item" href="{% url 'tag_create_url' %}">Создать тэг</a>
+  </div>
+</div>
+
+
+<!-- ПЕРВЫЙ ВАРИАНТ -->
+
+<!-- <div class="btn-group">
+  <button type="button" class="btn btn-success dropdown-toggle"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Тэги
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="{% url 'tag_create_url' %}">Создать тэг</a>
+    <a class="dropdown-item" href="">Обновить тэг</a>
+    <a class="dropdown-item" href="">Удалить тэг</a>
+    <div class="dropdown-divider"></div>
+  </div>
+</div> -->
+
+<!-- ВТОРОЙ ВАРИАНТ -->
+
+<!-- <div class="btn-group">
+  <button type="button" class="btn btn-success">Тэги</button>
+  <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="{% url 'tag_create_url' %}">Создать тэг</a>
+    <a class="dropdown-item" href="">Обновить тэг</a>
+    <a class="dropdown-item" href="">Удалить тэг</a>
+    <div class="dropdown-divider"></div>
+  </div>
+</div> -->
+
+{% endblock %}

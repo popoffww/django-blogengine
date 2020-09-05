@@ -1,0 +1,14 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+О блоге - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron d-block text-white" style="background-color: #708090;">
+  <div class="container">
+    <h1 class="display-5 text-center my-3">О блоге</h1>
+    <p class="lead text-center">Учебный проект по созданию блога на фреймворке Django</p>
+  </div>
+</div>
+{% endblock %}

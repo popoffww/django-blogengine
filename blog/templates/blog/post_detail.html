@@ -1,0 +1,20 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+{{ post.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">
+  {{ post.title}}
+</h1>
+<p>
+  {{ post.body }}
+</p>
+<a href="{% url 'posts_list_url' %}"
+   type="submuit"
+   class="btn text-white"
+   style="background-color: #37474f">
+   Вернуться
+ </a>
+{% endblock %}
